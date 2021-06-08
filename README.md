@@ -64,7 +64,7 @@ int     0x80                            ; system call
 
 I had some early experiments using `gas` and `ld` separetely to create an executable and was astonished to find the resulting files were huge! (ok not actually huge but still thousands of bytes when my program code was literally only a few).
 It was at this point I stumbled in to the inner workings of [ELF](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format) and found this excellent article on how to make the smallest linux executable possible: https://www.muppetlabs.com/~breadbox/software/tiny/teensy.html
-The [final version](./pause.asm) is based on the example there but does not (yet) use all of the tricky minimization techniques such as overlapping the sections of the ELF section and sneakily omitting things the OS doesn't technically check.
+The [final version](./pause.asm) is based on the example there but does not (yet) use all of the tricky minimization techniques such as overlapping the required parts of the ELF file and sneakily omitting things the OS doesn't technically check.
 
 Total size? 91 bytes.
 ```
